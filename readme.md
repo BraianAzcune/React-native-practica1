@@ -41,3 +41,13 @@ sin error aparente, mas que el emulador quedaba en negro sin ningún tipo de err
 
 Desístale mi Nodejs, reinicie, instale la ultima versión lts (nodejs 16), reinicie, y al crear el proyecto nuevamente, y ejecutar, arranco perfecto.
 ```
+
+# Seccion 4 Layouts
+
+Existen dos sistemas de posicionamiento de componentes: Relativo y absoluto.
+el relativo hace que el punto izquierdo superior esa el eje principal, en este tanto top, botto, left y right son 0 por defecto y se mueven acorde.
+
+En la posicion abosoluta el punto de referencia es el padre del componente.
+por lo que poner top = 0, pone al componente arriba, right = 0, lo pone a la derecha, left= 0 a la izquierda, bottom = 0 abajo.
+
+ademas los componentes no se colisionan entre si, por lo que se atraviesan.

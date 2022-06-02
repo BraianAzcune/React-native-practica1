@@ -1,8 +1,7 @@
 import React from 'react';
-import DimensionesScreen from './screens/DimensionesScreen';
+import EfectoCajitas from './screens/EfectoCajitas';
 
 const App = () => {
-  console.log('app.tsx');
-  return <DimensionesScreen />;
+  return <EfectoCajitas></EfectoCajitas>;
 };
 export default App;

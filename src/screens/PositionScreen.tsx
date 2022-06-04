@@ -4,8 +4,8 @@ import { StyleSheet, View } from 'react-native';
 export default function PositionScreen() {
   return (
     <View style={styles.container}>
-      <View style={styles.cajaMorada}></View>
-      <View style={styles.cajaNaranja}></View>
+      <View style={styles.cajaMorada} />
+      <View style={styles.cajaNaranja} />
     </View>
   );
 }

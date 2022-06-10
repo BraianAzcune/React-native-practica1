@@ -1,7 +1,7 @@
 import React from 'react';
-import EfectoCajitas from './screens/EfectoCajitas';
+import FlexScreen from './screens/FlexScreen';
 
 const App = () => {
-  return <EfectoCajitas />;
+  return <FlexScreen />;
 };
 export default App;

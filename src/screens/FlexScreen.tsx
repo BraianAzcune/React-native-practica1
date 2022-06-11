@@ -1,14 +1,32 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  NativeModules,
+  LayoutAnimation,
+} from 'react-native';
+
+const { UIManager } = NativeModules;
+
+UIManager.setLayoutAnimationEnabledExperimental &&
+  UIManager.setLayoutAnimationEnabledExperimental(true);
 
 export default function FlexScreen() {
   const [caja1, setCaja1] = React.useState(0);
   // const [caja2, setCaja2] = React.useState(0);
   // const [caja3, setCaja3] = React.useState(0);
+
+  const toggleSize = () => {
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    setCaja1(prev => +!prev);
+  };
+
   return (
     <View style={styles.container}>
       <TouchableOpacity
-        onPress={() => setCaja1(prev => +!prev)}
+        onPress={toggleSize}
         style={[styles.caja1, { flex: caja1 }]}>
         <Text style={styles.texto}>Caja 1</Text>
       </TouchableOpacity>

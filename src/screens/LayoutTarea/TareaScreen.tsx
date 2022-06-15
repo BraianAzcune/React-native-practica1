@@ -18,13 +18,13 @@ const TareaScreen = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.cajaAzul}>
+      <View style={styles.cajaVioleta}>
         <Caja simbolo={'+'} handlePress={siguiente} />
       </View>
       <View style={styles.cajaNaranja}>
         <Caja simbolo={'-'} handlePress={anterior} />
       </View>
-      <View style={styles.cajaRoja}>
+      <View style={styles.cajaCeleste}>
         <Caja simbolo={String(tarea)} handlePress={reset} />
       </View>
     </View>
@@ -48,17 +48,16 @@ const styles = StyleSheet.create({
     color: '#fff',
     flex: 1,
   },
-
+  cajaVioleta: {
+    ...mixStyle.caja,
+    backgroundColor: '#7b1fa2',
+  },
   cajaNaranja: {
     ...mixStyle.caja,
-    backgroundColor: '#ffc107',
+    backgroundColor: '#f2a627',
   },
-  cajaAzul: {
+  cajaCeleste: {
     ...mixStyle.caja,
-    backgroundColor: '#2196f3',
-  },
-  cajaRoja: {
-    ...mixStyle.caja,
-    backgroundColor: '#f44336',
+    backgroundColor: '#79eaff',
   },
 });

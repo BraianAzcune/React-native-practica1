@@ -1,7 +1,7 @@
 import React from 'react';
-import FlexScreen from './screens/FlexScreen';
+import TareaScreen from './screens/LayoutTarea/TareaScreen';
 
 const App = () => {
-  return <FlexScreen />;
+  return <TareaScreen />;
 };
 export default App;

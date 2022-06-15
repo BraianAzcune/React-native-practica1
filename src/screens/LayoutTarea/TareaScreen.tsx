@@ -1,30 +1,40 @@
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { View, NativeModules, LayoutAnimation } from 'react-native';
 import React from 'react';
 import Caja from './Caja';
 import { useState } from 'react';
+import { getStyle } from './estilos';
+
+const { UIManager } = NativeModules;
+
+UIManager.setLayoutAnimationEnabledExperimental &&
+  UIManager.setLayoutAnimationEnabledExperimental(true);
 
 const TareaScreen = () => {
   const [tarea, setTarea] = useState(0);
   const siguiente = () => {
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     setTarea(prev => (prev < 10 ? prev + 1 : 0));
   };
   const anterior = () => {
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     setTarea(prev => (prev > 0 ? prev - 1 : 10));
   };
-
   const reset = () => {
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     setTarea(0);
   };
 
+  const estilo = getStyle(tarea);
+
   return (
-    <View style={styles.container}>
-      <View style={styles.cajaVioleta}>
+    <View style={estilo.container}>
+      <View style={estilo.cajaVioleta}>
         <Caja simbolo={'+'} handlePress={siguiente} />
       </View>
-      <View style={styles.cajaNaranja}>
+      <View style={estilo.cajaNaranja}>
         <Caja simbolo={'-'} handlePress={anterior} />
       </View>
-      <View style={styles.cajaCeleste}>
+      <View style={estilo.cajaCeleste}>
         <Caja simbolo={String(tarea)} handlePress={reset} />
       </View>
     </View>
@@ -32,32 +42,3 @@ const TareaScreen = () => {
 };
 
 export default TareaScreen;
-
-const mixStyle = StyleSheet.create({
-  caja: {
-    width: 100,
-    height: 100,
-    borderWidth: 10,
-    borderColor: 'white',
-  },
-});
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#28425b',
-    color: '#fff',
-    flex: 1,
-  },
-  cajaVioleta: {
-    ...mixStyle.caja,
-    backgroundColor: '#7b1fa2',
-  },
-  cajaNaranja: {
-    ...mixStyle.caja,
-    backgroundColor: '#f2a627',
-  },
-  cajaCeleste: {
-    ...mixStyle.caja,
-    backgroundColor: '#79eaff',
-  },
-});

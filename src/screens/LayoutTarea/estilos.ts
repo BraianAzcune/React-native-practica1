@@ -136,7 +136,6 @@ export function getStyle(index: number) {
         },
       };
     case 8:
-      // no se podra hacer sin usar absolute ?
       return {
         ...styles0,
         container: {
@@ -146,22 +145,16 @@ export function getStyle(index: number) {
         },
         cajaVioleta: {
           ...styles0.cajaVioleta,
-          position: 'absolute',
-          top: 236,
         },
         cajaNaranja: {
           ...styles0.cajaNaranja,
-          position: 'absolute',
-          right: 56,
+          left: 100,
         },
         cajaCeleste: {
           ...styles0.cajaCeleste,
-          position: 'absolute',
-          bottom: 236,
         },
       };
     case 9:
-      // no se podra hacer sin usar absolute ?
       return {
         ...styles0,
         container: {
@@ -171,22 +164,19 @@ export function getStyle(index: number) {
         },
         cajaVioleta: {
           ...styles0.cajaVioleta,
-          position: 'absolute',
-          top: 336,
+
+          top: 100,
         },
         cajaNaranja: {
           ...styles0.cajaNaranja,
-          position: 'absolute',
-          right: 56,
+
+          left: 100,
         },
         cajaCeleste: {
           ...styles0.cajaCeleste,
-          position: 'absolute',
-          bottom: 236,
         },
       };
     case 10:
-      // no se podra hacer sin usar absolute ?
       return {
         ...styles0,
         container: {

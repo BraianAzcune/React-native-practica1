@@ -10,7 +10,7 @@ UIManager.setLayoutAnimationEnabledExperimental &&
   UIManager.setLayoutAnimationEnabledExperimental(true);
 
 const TareaScreen = () => {
-  const [tarea, setTarea] = useState(0);
+  const [tarea, setTarea] = useState(10);
   const siguiente = () => {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     setTarea(prev => (prev < 10 ? prev + 1 : 0));
@@ -27,6 +27,8 @@ const TareaScreen = () => {
   const estilo = getStyle(tarea);
 
   return (
+    // El mensaje esta en cada linea que usa style
+    // no overload matches this call.
     <View style={estilo.container}>
       <View style={estilo.cajaVioleta}>
         <Caja simbolo={'+'} handlePress={siguiente} />
